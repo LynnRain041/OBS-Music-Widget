@@ -26,8 +26,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
     - name: Install Dependencies
       run: npm install
+    - run: npm pack
+      
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v7.0.0
       with:
