@@ -28,5 +28,8 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies
       run: npm install
-    - run: npm run pack
-    - run: npm test
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v7.0.0
+      with:
+        name: artifact
+        path: dist\win-unpacked\OBS Media Widget.exe
